@@ -1,0 +1,16 @@
+{
+    "systemName": "S/4HanaCloud",
+    "communicationArrangement": {
+        "communicationArrangementName": "ZCA_CRED_MASTER",
+        "scenarioId": "ZCS_CRED_MASTER",
+        "inboundAuthentication": "BasicAuthentication",
+        "outboundAuthentication": "BasicAuthentication",        
+        "communicationSystem": {
+            "communicationSystemHostname": "default.com",
+            "outboundCommunicationUser": {
+                "username": "DefaultUser",
+                "password": "DefaultPassword"
+            }
+        }
+    }
+}

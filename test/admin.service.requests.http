@@ -1,0 +1,20 @@
+# In the following requests the variable baseUrl is used.
+# Its value is set here.
+@baseUrl = http://localhost:4004
+
+### ------------------------------------------------------------------------
+# Get all authors with language en
+# with inlined epoch
+GET {{baseUrl}}/odata/v4/remote-data/CredDet
+
+
+### ------------------------------------------------------------------------
+# Create a new author with empty name and invalid epoch ID
+POST {{baseUrl}}/odata/v4/remote-data/CredDet
+Content-Type: application/json
+
+{
+  "Partner": "0010100111",
+  "Name": "Data Tech1",
+  "RiskClass": "A"  
+}
