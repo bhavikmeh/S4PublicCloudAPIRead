@@ -56,6 +56,6 @@ entity CredSegDet.CredSeg {
   @sap.label : 'Changed On'
   @sap.quickinfo : 'Local Instance Last Change Date Time'
   LastChangedAt : Timestamp;
-  to_cred_master : Association to CredSegDet.CredMaster;
+  to_cred_master : Association to CredSegDet.CredMaster on to_cred_master.Partner = Partner;
 };
 

@@ -7,6 +7,17 @@
 # with inlined epoch
 GET {{baseUrl}}/odata/v4/remote-data/CredDet
 
+### ------------------------------------------------------------------------
+# Get all books of William Shakespeare
+# @name getPartner
+GET {{baseUrl}}/odata/v4/remote-data/CredDet?$filter=Partner eq '0010100005'
+
+###
+@authorID = {{getPartner.response.body.$.value[0].Partner}}
+
+
+GET {{baseUrl}}/odata/v4/remote-data/CredDet({{authorID}})/to_credsgm
+
 
 ### ------------------------------------------------------------------------
 # Create a new author with empty name and invalid epoch ID
@@ -14,7 +25,34 @@ POST {{baseUrl}}/odata/v4/remote-data/CredDet
 Content-Type: application/json
 
 {
-  "Partner": "0010102027",
+  "Partner": "0010102026",
   "Name": "Data Tech1",
-  "RiskClass": "A"  
+  "RiskClass": "A" , 
+  "to_credsgm" :
+  [{
+  "Partner": "0010102026",
+      "CreditSgmnt": "1000",
+      "CreditLimit": "2000.00",
+      "Currency": "EUR"
+},
+{ 
+  "Partner": "0010102026",
+      "CreditSgmnt": "1001",
+      "CreditLimit": "3000.00",
+      "Currency": "EUR"
+  
+}]
 }
+
+### ------------------------------------------------------------------------
+# Create a new author with empty name and invalid epoch ID
+POST {{baseUrl}}/odata/v4/remote-data/CredFromFront
+Content-Type: application/json
+
+{
+  "Partner": "0010102029",
+  "Name": "Data Test Bhavik",
+  "RiskClass": "A" 
+  
+}
+
