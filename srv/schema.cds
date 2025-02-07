@@ -7,5 +7,5 @@ service RemoteData {
  entity CredSeg as projection on my.CredSeg;    
 
 }
-annotate RemoteData with @requires : 'authenticated-user';
+// annotate RemoteData with @requires : 'authenticated-user';
 

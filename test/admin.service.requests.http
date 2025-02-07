@@ -14,7 +14,7 @@ POST {{baseUrl}}/odata/v4/remote-data/CredDet
 Content-Type: application/json
 
 {
-  "Partner": "0010100111",
+  "Partner": "0010102027",
   "Name": "Data Tech1",
   "RiskClass": "A"  
 }

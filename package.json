@@ -34,6 +34,8 @@
         "CredSegDet": {
           "kind": "odata-v2",
           "model": "srv/external/ZUI_I_CRED_MASTER_0001",
+          "csrf": true,
+          "csrfInBatch": true,
           "credentials": {
             "url": "https://my411403-api.s4hana.cloud.sap/sap/opu/odata/sap/ZUI_I_CRED_MASTER",
             "authentication": "BasicAuthentication",
